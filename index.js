@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGODB_URL).then(() => console.log('MongoDB Connec
 
 // Sample Route
 app.get('/', (req, res) => {
-  res.send('Backend is running...');
+  res.send('Backend is running Started...');
 });
 
 app.use('/api', userRoutes); // Use Signup Route
