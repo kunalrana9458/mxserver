@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const userRoutes = require("./routes/auth"); // Import Routes
 require('dotenv').config();
 
 const app = express();
@@ -17,6 +18,8 @@ mongoose.connect(process.env.MONGODB_URL).then(() => console.log('MongoDB Connec
 app.get('/', (req, res) => {
   res.send('Backend is running...');
 });
+
+app.use('/api', userRoutes); // Use Signup Route
 
 // Start Server
 const PORT = process.env.PORT || 5000;
